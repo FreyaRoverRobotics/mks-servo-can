@@ -5,7 +5,7 @@ import mks_servo
 import logging
 
 # Stock slcan firmware on Windows
-bus = can.interface.Bus(bustype='slcan', channel='COM3', bitrate=500000)
+bus = can.interface.Bus(bustype='socketcan', channel='can0', bitrate=500000)
 notifier = can.Notifier(bus, [])
 
 def wait_for_motor_idle2(timeout):    

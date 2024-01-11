@@ -295,7 +295,7 @@ def run_motor_absolute_motion_by_axis(self, speed, acceleration, absolute_axis):
     self._validate_speed(speed)
     self._validate_acceleration(acceleration)
   
-    # TODO: Should we add a check to avoid stopping the motor inmediately when running at more than 1000 RPMs?
+    # TODO: Should we add a check to avoid stopping the motor immediately when running at more than 1000 RPMs?
     cmd = [
         ((speed >> 8) & 0b1111),
         speed & 0xFF,

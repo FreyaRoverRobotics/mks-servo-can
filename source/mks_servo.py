@@ -327,7 +327,7 @@ class MksServo:
         return None
     
     def specialized_state(self, op_code, status_enum, status_enum_exception):
-        tmp = self.set_generic(op_code, self.GENERIC_RESPONSE_LENGTH, [op_code.value])  
+        tmp = self.set_generic(op_code, self.GENERIC_RESPONSE_LENGTH)  
         status_int = int.from_bytes(tmp[1:2], byteorder='big')  
         try:
             return status_enum(status_int)

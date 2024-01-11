@@ -1,5 +1,6 @@
 import time
 import can
+import numpy as np
 from mks_enums import MksCommands, MotorShaftProtectionStatus, SuccessStatus, GoBackToZeroStatus, EnableStatus
 
 class motor_shaft_protection_status_error(Exception):
@@ -72,10 +73,11 @@ def read_encoder_value_addition(self):
     op_code = MksCommands.READ_ENCODED_VALUE_ADDITION
     response_length = 8
 
-    data = self.set_generic(op_code, response_length, [op_code.value])
+    data = self.set_generic(op_code, response_length)
 
     if data:
-        return int.from_bytes(data[1:7], byteorder='big', signed=True)                                
+        tmp = bytes(data[1:7].hex(), 'ascii')
+        return int.from_bytes(tmp, byteorder='big', signed=True)                                
     return None  
 
 def read_motor_speed(self):
