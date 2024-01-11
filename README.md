@@ -55,3 +55,7 @@ This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE
 # Acknowledgments
 Thanks to the python-can team for their excellent CAN interface library.
 Special thanks to everyone who contributed to making this library.
+
+# ToDo
+Connect to MoveIT: https://github.com/coen132/Arctos/tree/main
+Real Hardware: https://articulatedrobotics.xyz/mobile-robot-13-ros2-control-real/
